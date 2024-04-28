@@ -3,9 +3,9 @@ const sidebarCn = require('./sidebar-cn.json');
 const sidebarEn = require('./sidebar-en.json');
 const navEn = require('./nav-en.json');
 module.exports = {
-  base: '/tools-ocr/',
-  title: 'Tools OCR',
-  description: 'Tools OCR',
+  base: '/tree-hole-ocr-docs/',
+  title: 'Tree Hole OCR',
+  description: 'Tree Hole OCR',
   head: [
     ["link", {
       rel: "icon",
