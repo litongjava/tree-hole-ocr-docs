@@ -4,7 +4,7 @@ title: Home
 heroImage: /logo.png
 actions:
   - text: Get Started
-    link: /en/01/1.1.html
+    link: /zh/01/1.1.html
     type: primary
 
 features:
