@@ -1,41 +1,18 @@
-// 引入JSON文件
-const sidebarCn = require('./sidebar-cn.json');
-const sidebarEn = require('./sidebar-en.json');
-const navEn = require('./nav-en.json');
-module.exports = {
-  base: '/tree-hole-ocr-docs/',
-  title: 'Tree Hole OCR',
-  description: 'Tree Hole OCR',
-  head: [
-    ["link", {
-      rel: "icon",
-      href: '/favicon.ico'
-    }],
-    ["meta", {
-      name: "author",
-      content: "litongjava@qq.com,jfinal@qq.com"
-    }],
-    ["meta", {
-      name: "keywords",
-      content: "tools-ocr,ocr tools"
-    }],
-    ["script", {
-      "crossorigin": "anonymous",
-      async: true,
-      src: ""
-    }],
-  ],
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress/cli'
+import { viteBundler } from '@vuepress/bundler-vite'
 
-  markdown: {
-    lineNumbers: true
-  },
-  themeConfig: {
-    logo: '/jfinallogo.png',
-    lastUpdated: 'Last Updated', // string | boolean,K
-    nav: navEn,
-    sidebar: {
-      '/cn/': sidebarCn,
-      '/en/': sidebarEn
-    }
-  },
-}
+export default defineUserConfig({
+  lang: 'en-US',
+
+  title: 'VuePress',
+  description: 'My first VuePress Site',
+
+  theme: defaultTheme({
+    logo: 'https://vuejs.press/images/hero.png',
+
+    navbar: ['/', '/get-started'],
+  }),
+
+  bundler: viteBundler(),
+})
