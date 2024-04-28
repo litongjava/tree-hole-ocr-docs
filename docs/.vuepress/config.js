@@ -1,18 +1,33 @@
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress/cli'
-import { viteBundler } from '@vuepress/bundler-vite'
+import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress/cli";
+import { viteBundler } from "@vuepress/bundler-vite";
 
 export default defineUserConfig({
-  lang: 'en-US',
+  lang: "en-US",
 
-  title: 'VuePress',
-  description: 'My first VuePress Site',
+  title: "Tree Hole OCR",
+  description: "Tree Hole OCR Docs Site",
 
   theme: defaultTheme({
-    logo: 'https://vuejs.press/images/hero.png',
+    logo: "/logo.png",
 
-    navbar: ['/', '/get-started'],
+    navbar: ["/"],
   }),
 
+  locales: {
+    // 键名是该语言所属的子路径
+    // 作为特例，默认语言可以使用 '/' 作为其路径。
+    "/": {
+      lang: "en-US",
+      title: "Tree Hole OCR",
+      description: "Open source free text recognition tool",
+    },
+    "/zh/": {
+      lang: "zh-CN",
+      title: "树洞OCR",
+      description: "开源免费的文字识别工具",
+    },
+  },
+
   bundler: viteBundler(),
-})
+});
